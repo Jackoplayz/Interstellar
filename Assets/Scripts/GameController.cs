@@ -48,9 +48,29 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < starsAmount; i++)
         {
+
+            int safety = 1000;
+            int whileCounter = 0;
+            while (whileCounter <= safety)
+            {
+
+                //Get a random position
+                //Check that that position is valid
+
+                //If it is valid, break the loop  
+               // break;
+                whileCounter++;
+            }
+
+            if (safety == whileCounter) Debug.Log("The safety was hit while spawning stars");
+
+
+            //Getting the valid position
             float randomX = Random.Range(minX, maxX);
-                     float randomY = Random.Range(minY, maxY);
+            float randomY = Random.Range(minY, maxY);
             Vector3 position = new Vector3(randomX, randomY, -1);
+
+            //Spawning the actual star
             var Star = Instantiate(starPrefab, position, Quaternion.identity);
 
         } 
