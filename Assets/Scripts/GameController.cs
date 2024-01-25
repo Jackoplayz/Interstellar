@@ -27,10 +27,10 @@ public class GameController : MonoBehaviour
         // Start is called before the first frame update
         void Start()
         {
-         minX = -8.8f;
-         maxX = 8.8f;
-         minY = -5f;
-         maxY = 5f;
+         minX = -8.3f;
+         maxX = 8.3f;
+         minY = -4.5f;
+         maxY = 4.5f;
         CreateNewGame();
         }
 
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
             int safety = 1000;
             int whileCounter = 0;
             Vector3 position = Vector3.zero;
-            while (whileCounter <= safety)
+            while (whileCounter < safety)
             {
 
                 //Get a random position
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
                 for (int j = 0; j < stars.Count; j++)
                 {
                     float dist = Vector3.Distance(position, stars[j].transform.position );
-                    Debug.Log(dist);
+                   // Debug.Log(dist);
                     if (dist < minStarSpacing )
                     {
                         positionIsValid = false;
@@ -82,6 +82,8 @@ public class GameController : MonoBehaviour
                 whileCounter++;
             }
 
+
+            Debug.Log($"While counter: {whileCounter}");
             if (safety == whileCounter)
             {
                 Debug.Log("The safety was hit while spawning stars");
