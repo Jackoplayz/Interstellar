@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject headQuarters;
     List<GameObject> stars = new List<GameObject>();
     public float minStarSpacing = 1;
     public GameObject starPrefab;
@@ -43,7 +44,6 @@ public class GameController : MonoBehaviour
     {
         
         
-        //where are the stars
         //how many planets per star
         //reset any player progress, destroy existing stars
 
@@ -57,16 +57,22 @@ public class GameController : MonoBehaviour
             {
 
                 //Get a random position
-                //Check that that position is valid
+                
 
                 float randomX = Random.Range(minX, maxX);
                 float randomY = Random.Range(minY, maxY);
                 position = new Vector3(randomX, randomY, -1);
+               
+
+
+                float dist = Vector3.Distance(position, headQuarters.transform.position);
+                if (dist < minStarSpacing) continue;
+                //Check that that position is valid
                 bool positionIsValid = true;
                 for (int j = 0; j < stars.Count; j++)
                 {
-                    float dist = Vector3.Distance(position, stars[j].transform.position );
-                   // Debug.Log(dist);
+                     dist = Vector3.Distance(position, stars[j].transform.position );
+                   
                     if (dist < minStarSpacing )
                     {
                         positionIsValid = false;
@@ -77,23 +83,16 @@ public class GameController : MonoBehaviour
                 {
                     break;
                 }
-                //If it is valid, break the loop  
-                // break;
                 whileCounter++;
             }
 
-
-            Debug.Log($"While counter: {whileCounter}");
+            //Debug.Log($"While counter: {whileCounter}");
             if (safety == whileCounter)
             {
-                Debug.Log("The safety was hit while spawning stars");
+                //Debug.Log("The safety was hit while spawning stars");
                 break;
             }
             
-
-            //Getting the valid position
-            
-
             //Spawning the actual star
             var star = Instantiate(starPrefab, position, Quaternion.identity);
             stars.Add(star);

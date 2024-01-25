@@ -435,13 +435,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d600caf4266e8dd40afa309404bc480d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minStarSpacing: 10
+  headQuarters: {fileID: 1719542162}
+  minStarSpacing: 1
   starPrefab: {fileID: 7406381102980561400, guid: 7b55bff071255ec4c96d95e3a7c582df, type: 3}
   minX: 0
   maxX: 0
   minY: 0
   maxY: 0
-  starsAmount: 5
+  starsAmount: 7
 --- !u!4 &1473051048
 Transform:
   m_ObjectHideFlags: 0
@@ -555,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719542162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.74, y: -4.89, z: -6.27}
+  m_LocalPosition: {x: -8.74, y: -4.89, z: -1}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
