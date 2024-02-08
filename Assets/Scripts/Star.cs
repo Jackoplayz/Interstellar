@@ -18,7 +18,7 @@ public class Star : MonoBehaviour
     void OnMouseDown()
     {
         // Code here is called when the GameObject is clicked on.
-        Debug.Log("Star was touched");
+        GameController.instance.MoveToStar(this);
     }
 
 

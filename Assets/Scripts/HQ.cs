@@ -18,6 +18,6 @@ public class HQ : MonoBehaviour
     void OnMouseDown()
     {
         // Code here is called when the GameObject is clicked on.
-        Debug.Log("Headquaters was touched");
+        GameController.instance.MoveToHeadquarters();
     }
 }

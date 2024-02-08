@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63028b3a3e306a146b3ec491f6ef3ed6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -236,7 +236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   headQuarters: {fileID: 1719542162}
-  minStarSpacing: 1
+  minStarSpacing: 2
   starPrefab: {fileID: 7406381102980561400, guid: 7b55bff071255ec4c96d95e3a7c582df, type: 3}
   minX: 0
   maxX: 0
@@ -566,6 +566,7 @@ GameObject:
   - component: {fileID: 1719542166}
   - component: {fileID: 1719542167}
   - component: {fileID: 1719542168}
+  - component: {fileID: 1719542169}
   m_Layer: 0
   m_Name: Headquarters
   m_TagString: Untagged
@@ -661,3 +662,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.68, y: 5.22, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1719542169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719542162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12bab6a6953cf744b93522e80453d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

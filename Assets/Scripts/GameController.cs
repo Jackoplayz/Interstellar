@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
     public GameObject headQuarters;
+    public Ship spaceShip;
     List<GameObject> stars = new List<GameObject>();
     public float minStarSpacing = 1;
     public GameObject starPrefab;
     public static GameController instance;
     public float minX, maxX, minY, maxY;
     public int starsAmount = 5;
+    Star currentStar;
+    public float shipYOffset;
+    public float shipYOffsetHeadquarters;
+    public float shipXOffsetHeadquarters;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -28,10 +35,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        minX = -8.3f;
-        maxX = 8.3f;
-        minY = -4.5f;
-        maxY = 4.5f;
+       
         CreateNewGame();
     }
 
@@ -40,6 +44,21 @@ public class GameController : MonoBehaviour
     {
 
     }
+    public void MoveToStar(Star star)
+    {
+        //Debug.Log($"Moving to star at {star.gameObject.transform.position}");
+        spaceShip.transform.position = new Vector3(star.transform.position.x,star.transform.position.y + shipYOffset, spaceShip.transform.position.z) ;
+        currentStar = star;
+
+    }
+
+    public void MoveToHeadquarters()
+    {
+            spaceShip.transform.position = new Vector3(headQuarters.transform.position.x + shipXOffsetHeadquarters, headQuarters.transform.position.y + shipYOffsetHeadquarters, spaceShip.transform.position.z);
+        currentStar = null;
+    }
+
+
     void CreateNewGame()
     {
         //how many stars
@@ -105,8 +124,9 @@ public class GameController : MonoBehaviour
             stars.Add(star);
 
         }
+        MoveToHeadquarters();
     }
-
+    
 
 
 }
